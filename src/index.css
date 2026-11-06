@@ -1,0 +1,31 @@
+/* src/index.css */
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dashboard: var(--bg-dashboard);
+  --color-text-dashboard: var(--text-dashboard);
+  --color-card: var(--bg-card);
+}
+
+/* Variables para Modo Claro (por defecto) */
+:root {
+  --bg-dashboard: oklch(0.97 0.01 256);
+  --text-dashboard: oklch(0.25 0.02 240);
+  --bg-card: oklch(1 0 0);
+}
+
+/* Variables para Modo Oscuro (Preferencia del sistema o clase aplicada) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-dashboard: oklch(0.15 0.02 240);
+    --text-dashboard: oklch(0.92 0.01 256);
+    --bg-card: oklch(0.22 0.02 240);
+  }
+}
+
+/* Si quieres alternar con un botón usando la clase .dark en el HTML */
+html.dark {
+  --bg-dashboard: oklch(0.15 0.02 240);
+  --text-dashboard: oklch(0.92 0.01 256);
+  --bg-card: oklch(0.22 0.02 240);
+}
